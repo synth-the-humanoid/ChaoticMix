@@ -42,11 +42,8 @@ namespace ChaoticMix
 
         public override void onDamage(Entity target)
         {
-            if (target.IsPartyMember)
-            {
-                IntPtr camTargetPtr = modInterface.memoryInterface.nameToAddress("CameraTargetPtr");
-                modInterface.memoryInterface.writeLong(camTargetPtr, target.EntityPtr);
-            }
+            IntPtr camTargetPtr = modInterface.memoryInterface.nameToAddress("CameraTargetPtr");
+            modInterface.memoryInterface.writeLong(camTargetPtr, target.EntityPtr);
         }
     }
 }
